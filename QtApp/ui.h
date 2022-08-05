@@ -73,10 +73,13 @@ public:
         titleBar->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
         maxButton = new QPushButton(titleBar);
         maxButton->setObjectName(QString::fromUtf8("maxButton"));
+        maxButton->setToolTip(QString::fromUtf8("最大"));
         minButton = new QPushButton(titleBar);
         minButton->setObjectName(QString::fromUtf8("minButton"));
+        minButton->setToolTip(QString::fromUtf8("最小"));
         closeButton = new QPushButton(titleBar);
         closeButton->setObjectName(QString::fromUtf8("closeButton"));
+        closeButton->setToolTip(QString::fromUtf8("关闭"));
         titleLabel = new QLabel(titleBar);
         titleLabel->setObjectName(QString::fromUtf8("titleLabel"));
         titleLabel->setText(QString::fromUtf8("RSC 电能质量监控系统"));

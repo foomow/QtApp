@@ -1,3 +1,7 @@
+QWidget#QtAppClass{
+    color:silver;
+    background: #4b5320;
+}
 QWidget#tittleBar{
     color:silver;
     background: #4b5320;
@@ -6,7 +10,7 @@ QWidget#tittleBar{
     padding-right:6px;
 }
 QLabel#titleLabel{
-    color:silver;
+    color:white;
     margin-left:6px;
 }
 QWidget#tittleBar>QPushButton{
@@ -45,8 +49,4 @@ QWidget#tittleBar>QPushButton#closeButton:hover{
 }
 QWidget#tittleBar>QPushButton#closeButton:pressed{    
     background: darkred;
-}
-QWidget#QtAppClass{
-    color:silver;
-    background: #4b5320;
 }
