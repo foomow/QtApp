@@ -1,0 +1,52 @@
+QWidget#tittleBar{
+    color:silver;
+    background: #4b5320;
+    margin:1px;
+    padding-left:6px;
+    padding-right:6px;
+}
+QLabel#titleLabel{
+    color:silver;
+    margin-left:6px;
+}
+QWidget#tittleBar>QPushButton{
+    color:silver;
+    width:12px;
+    height:12px;
+    margin-right:6px;
+    border: 1px solid silver;
+}
+QWidget#tittleBar>QPushButton#maxButton{    
+    background: qradialgradient(cx:0, cy:0, radius: 1,
+                fx:0.5, fy:0.5, stop:0 green, stop:1 darkgreen);
+}
+QWidget#tittleBar>QPushButton#maxButton:hover{    
+    background: lightgreen;
+}
+QWidget#tittleBar>QPushButton#maxButton:pressed{    
+    background: darkgreen;
+}
+QWidget#tittleBar>QPushButton#minButton{    
+    background: qradialgradient(cx:0, cy:0, radius: 1,
+                fx:0.5, fy:0.5, stop:0 gold, stop:1 orange);
+}
+QWidget#tittleBar>QPushButton#minButton:hover{    
+    background: yellow;
+}
+QWidget#tittleBar>QPushButton#minButton:pressed{    
+    background: orange;
+}
+QWidget#tittleBar>QPushButton#closeButton{    
+    background: qradialgradient(cx:0, cy:0, radius: 1,
+                fx:0.5, fy:0.5, stop:0 red, stop:1 darkred);
+}
+QWidget#tittleBar>QPushButton#closeButton:hover{    
+    background: tomato;
+}
+QWidget#tittleBar>QPushButton#closeButton:pressed{    
+    background: darkred;
+}
+QWidget#QtAppClass{
+    color:silver;
+    background: #4b5320;
+}
