@@ -2,11 +2,33 @@ QWidget#QtAppClass{
     color:silver;
     background: #4b5320;
 }
+QMenuBar{
+    margin-left:6px;
+    margin-right:6px;
+    color:silver;
+    background: #4b5320;
+}
+QMenuBar::item:selected {
+    color:white;
+    background: #222c18;
+    border:1px solid silver;
+}
+QMenu{
+    color:silver;
+    background: #4b5320;
+    border:1px solid silver;
+}
+QMenu::item:selected{
+    color:white;
+    background: #222c18;
+}
 QWidget#tittleBar{
     color:silver;
     background: #4b5320;
     margin:1px;
-    padding-left:6px;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-left:12px;
     padding-right:6px;
 }
 QLabel#titleLabel{
@@ -49,4 +71,16 @@ QWidget#tittleBar>QPushButton#closeButton:hover{
 }
 QWidget#tittleBar>QPushButton#closeButton:pressed{    
     background: darkred;
+}
+
+QToolBar QToolButton:pressed{
+    background: #222c18;
+    border:1px solid white;
+}
+QToolBar QToolButton:hover{
+    background: #222c18;
+    border:1px solid silver;
+}
+QWidget#mainContent{
+    background: #222c18;
 }

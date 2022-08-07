@@ -1,4 +1,11 @@
 <RCC>
-    <qresource prefix="QtApp">
+    <qresource prefix="/QtApp">
+        <file>icons/icon_new.png</file>
+        <file>icons/icon_del.png</file>
+        <file>icons/icon_edit.png</file>
+        <file>icons/icon_open.png</file>
+        <file>icons/icon_play.png</file>
+        <file>icons/icon_save.png</file>
+        <file>icons/icon_main.png</file>
     </qresource>
 </RCC>
