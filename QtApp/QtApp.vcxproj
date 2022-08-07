@@ -85,6 +85,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ui_TabPanel.cpp" />
+    <ClCompile Include="Ui_TitleBar.cpp" />
     <QtRcc Include="QtApp.qrc" />
     <QtMoc Include="QtApp.h" />
     <ClCompile Include="QtApp.cpp" />
@@ -92,6 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui.h" />
+    <ClInclude Include="Ui_TabPanel.h" />
+    <ClInclude Include="Ui_TitleBar.h" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="style.qss">

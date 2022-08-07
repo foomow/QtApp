@@ -1,4 +1,4 @@
-QWidget#QtAppClass{
+QWidget{
     color:silver;
     background: #4b5320;
 }
@@ -11,12 +11,11 @@ QMenuBar{
 QMenuBar::item:selected {
     color:white;
     background: #222c18;
-    border:1px solid silver;
 }
 QMenu{
     color:silver;
     background: #4b5320;
-    border:1px solid silver;
+    border:1px solid #444c38;
 }
 QMenu::item:selected{
     color:white;
@@ -83,4 +82,17 @@ QToolBar QToolButton:hover{
 }
 QWidget#mainContent{
     background: #222c18;
+}
+
+QWidget#tabpage{
+    border:0px;
+    background: #4b5320;
+}
+QTabBar{
+    padding:3px;
+    background: #4b5320;
+}
+QTabBar::tab {
+    color:silver;
+    background: #4b5320;
 }

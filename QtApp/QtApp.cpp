@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include "QtApp.h"
 
 QtApp::QtApp(QWidget* parent)
@@ -17,11 +17,6 @@ QtApp::QtApp(QWidget* parent)
 		emit closeButtonClicked();
 		}
 	);
-	/*QObject::connect(ui.titleBar, &QWidget::mouseReleaseEvent, [=](QMouseEvent* event) {
-		emit mousePressEvent(event);
-		ÕâÀïĞèÒª´ÓtoolbarÀïÃæ°ÑmouseµÄÁ½¸öÊÂ¼ş´«³öÀ´
-		}
-	);*/
 	m_nMouseClick_X_Coordinate = -1;
 	m_nMouseClick_Y_Coordinate = -1;
 }

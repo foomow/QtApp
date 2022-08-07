@@ -15,78 +15,10 @@
 #include <QLabel>
 #include <iostream>
 
+#include"Ui_TitleBar.h"
+#include "Ui_TabPanel.h"
+
 QT_BEGIN_NAMESPACE
-
-class Ui_TitleBar :public QFrame {
-public:
-	Ui_TitleBar() :QFrame() {
-		setup();
-	};
-	Ui_TitleBar(QWidget* parent) :QFrame(parent) {
-		setup();
-	};
-	~Ui_TitleBar() {
-	};
-	QPushButton* maxButton;
-	QPushButton* minButton;
-	QPushButton* closeButton;
-	QLabel* mainIconLabel;
-	QIcon* mainIcon;
-	QMenuBar* menuBar;
-	QSize sizeHint() const
-	{
-		return QSize(0, 30);
-	}
-private:
-	QHBoxLayout* horizontalLayout;
-	void setup()
-	{
-		mainIcon = new QIcon(":/QtApp/icons/icon_main.png");
-		mainIconLabel = new QLabel();
-		mainIconLabel->setObjectName(QString::fromUtf8("mainIconLabel"));
-		mainIconLabel->setPixmap(mainIcon->pixmap(QSize(15, 14)));
-
-		menuBar = new QMenuBar();
-		menuBar->setObjectName(QString::fromUtf8("menuBar"));
-		QMenu* menu = menuBar->addMenu("文件(&F)");
-		menu->addActions({ new QAction("新建"),new QAction("保存") ,new QAction("打开"), menu->addSeparator() ,new QAction("退出") });
-		menu = menuBar->addMenu("工程(&P)");
-		menu->addActions({ new QAction("启动"),new QAction("停止") ,new QAction("编辑") });
-		menu = menuBar->addMenu("视图(&V)");
-		menu->addActions({ new QAction("工程"),new QAction("监控") ,new QAction("统计"),new QAction("日志") });
-		menu = menuBar->addMenu("帮助(&H)");
-		menu->addActions({ new QAction("关于") });
-
-
-		maxButton = new QPushButton(this);
-		maxButton->setObjectName(QString::fromUtf8("maxButton"));
-		maxButton->setToolTip(QString::fromUtf8("最大"));
-
-		minButton = new QPushButton(this);
-		minButton->setObjectName(QString::fromUtf8("minButton"));
-		minButton->setToolTip(QString::fromUtf8("最小"));
-
-		closeButton = new QPushButton(this);
-		closeButton->setObjectName(QString::fromUtf8("closeButton"));
-		closeButton->setToolTip(QString::fromUtf8("关闭"));
-
-
-		horizontalLayout = new QHBoxLayout(this);
-		horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-		horizontalLayout->setSpacing(0);
-		horizontalLayout->setContentsMargins(0, 0, 0, 0);
-		horizontalLayout->setAlignment(Qt::AlignRight);
-		horizontalLayout->setSizeConstraint(QLayout::SetNoConstraint);
-
-		horizontalLayout->addWidget(mainIconLabel);
-		horizontalLayout->addWidget(menuBar);
-		horizontalLayout->addWidget(maxButton);
-		horizontalLayout->addWidget(minButton);
-		horizontalLayout->addWidget(closeButton);
-	}
-
-};
-
 
 class Ui_QtAppClass
 {
@@ -94,9 +26,10 @@ public:
 	QToolBar* mainToolBar;
 	QWidget* centralWidget;
 	QStatusBar* statusBar;
-	QVBoxLayout* verticalLayout;
 	QWidget* mainContent;
-	Ui_TitleBar* titleBar;
+	Ui_TitleBar* titleBar; 
+	Ui_TabPanel* leftTab;
+	
 
 	void setupUi(QMainWindow* QtAppClass)
 	{
@@ -108,7 +41,7 @@ public:
 		centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
 		QtAppClass->setCentralWidget(centralWidget);
 
-		verticalLayout = new QVBoxLayout(centralWidget);
+		QVBoxLayout* verticalLayout = new QVBoxLayout(centralWidget);
 		verticalLayout->setSpacing(0);
 		verticalLayout->setContentsMargins(0, 0, 0, 0);
 		verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -132,7 +65,30 @@ public:
 
 		mainContent = new QWidget();
 		mainContent->setObjectName(QString::fromUtf8("mainContent"));
-		verticalLayout->addWidget(mainContent);
+		mainContent->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+		
+		QGridLayout* gridLayout = new QGridLayout(mainContent);
+		gridLayout->setSpacing(1);
+
+
+		leftTab = new Ui_TabPanel();
+		leftTab->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+
+		QWidget* summary = new QWidget();
+		summary->setMinimumSize(300, 200);
+		summary->setObjectName("tabpage");
+		summary->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+		QWidget* circute = new QWidget();
+		circute->setMinimumSize(300, 200);
+		circute->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+		circute->setObjectName(QString::fromUtf8("tabpage"));
+		leftTab->addTab(summary, "综合");
+		leftTab->addTab(circute, "回路");
+		gridLayout->addWidget(leftTab, 0, 0,2,1);
+		gridLayout->addWidget(new QWidget(), 0, 1);
+		gridLayout->addWidget(new QWidget(), 1, 1);
+		
+		//verticalLayout->addWidget(mainContent);
 
 		statusBar = new QStatusBar(QtAppClass);
 		statusBar->setObjectName(QString::fromUtf8("statusBar"));
