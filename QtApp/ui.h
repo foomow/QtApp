@@ -67,7 +67,7 @@ public:
 		mainContent->setObjectName(QString::fromUtf8("mainContent"));
 		mainContent->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
 		
-		QGridLayout* gridLayout = new QGridLayout(mainContent);
+		/*QGridLayout* gridLayout = new QGridLayout(mainContent);
 		gridLayout->setSpacing(1);
 
 
@@ -86,9 +86,9 @@ public:
 		leftTab->addTab(circute, "回路");
 		gridLayout->addWidget(leftTab, 0, 0,2,1);
 		gridLayout->addWidget(new QWidget(), 0, 1);
-		gridLayout->addWidget(new QWidget(), 1, 1);
+		gridLayout->addWidget(new QWidget(), 1, 1);*/
 		
-		//verticalLayout->addWidget(mainContent);
+		verticalLayout->addWidget(mainContent);
 
 		statusBar = new QStatusBar(QtAppClass);
 		statusBar->setObjectName(QString::fromUtf8("statusBar"));
