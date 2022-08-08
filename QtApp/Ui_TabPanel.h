@@ -5,6 +5,9 @@ class Ui_TabPanel :
 {
 public:
     Ui_TabPanel();
+    Ui_TabPanel(QWidget* parent) :QTabWidget(parent) {
+        setup();
+    }
     ~Ui_TabPanel();
 private:
     void setup();

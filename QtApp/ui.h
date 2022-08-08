@@ -13,10 +13,13 @@
 #include <QToolButton>
 #include <QFrame>
 #include <QLabel>
+#include <QSplitter>
 #include <iostream>
 
 #include"Ui_TitleBar.h"
 #include "Ui_TabPanel.h"
+#include <QTextEdit>
+#include <QMdiArea>
 
 QT_BEGIN_NAMESPACE
 
@@ -26,7 +29,7 @@ public:
 	QToolBar* mainToolBar;
 	QWidget* centralWidget;
 	QStatusBar* statusBar;
-	QWidget* mainContent;
+	QMdiArea* mainContent;
 	Ui_TitleBar* titleBar; 
 	Ui_TabPanel* leftTab;
 	
@@ -63,31 +66,25 @@ public:
 		mainToolBar->addAction(QIcon(":/QtApp/icons/icon_edit.png"), "Edit(&E)");
 		verticalLayout->addWidget(mainToolBar);
 
-		mainContent = new QWidget();
+		mainContent = new QMdiArea();
 		mainContent->setObjectName(QString::fromUtf8("mainContent"));
 		mainContent->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+		mainContent->setBackground(QColor("#222c18"));
 		
 		/*QGridLayout* gridLayout = new QGridLayout(mainContent);
 		gridLayout->setSpacing(1);
 
+		leftTab = new Ui_TabPanel();		
+		gridLayout->addWidget(leftTab, 0, 0);*/
 
-		leftTab = new Ui_TabPanel();
-		leftTab->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
-
-		QWidget* summary = new QWidget();
-		summary->setMinimumSize(300, 200);
-		summary->setObjectName("tabpage");
-		summary->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
-		QWidget* circute = new QWidget();
-		circute->setMinimumSize(300, 200);
-		circute->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
-		circute->setObjectName(QString::fromUtf8("tabpage"));
-		leftTab->addTab(summary, "综合");
-		leftTab->addTab(circute, "回路");
-		gridLayout->addWidget(leftTab, 0, 0,2,1);
-		gridLayout->addWidget(new QWidget(), 0, 1);
-		gridLayout->addWidget(new QWidget(), 1, 1);*/
 		
+
+		leftTab = new Ui_TabPanel;
+
+		mainContent->addSubWindow(leftTab);
+
+		
+
 		verticalLayout->addWidget(mainContent);
 
 		statusBar = new QStatusBar(QtAppClass);

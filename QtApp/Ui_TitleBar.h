@@ -7,14 +7,14 @@
 #include <QMenuBar>
 
 class Ui_TitleBar :
-    public QFrame
+	public QFrame
 {
 public:
-	Ui_TitleBar() :QFrame() {
-		setup();
+	Ui_TitleBar(bool hasmenu = true) :QFrame() {
+		setup(hasmenu);
 	};
-	Ui_TitleBar(QWidget* parent) :QFrame(parent) {
-		setup();
+	Ui_TitleBar(QWidget* parent, bool hasmenu = true) :QFrame(parent) {
+		setup(hasmenu);
 	};
 	~Ui_TitleBar() {
 	};
@@ -28,7 +28,7 @@ private:
 	QWidget* blankArea;
 	QHBoxLayout* horizontalLayout;
 	QSize sizeHint() const;
-	void setup();
+	void setup(bool hasmenu = true);
 };
 #endif
 

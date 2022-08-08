@@ -3,24 +3,15 @@ QSize Ui_TitleBar::sizeHint() const
 {
 	return QSize(0, 30);
 }
-void Ui_TitleBar::setup()
+void Ui_TitleBar::setup(bool hasmenu)
 {
 	mainIcon = new QIcon(":/QtApp/icons/icon_main.png");
 	mainIconLabel = new QLabel();
 	mainIconLabel->setObjectName(QString::fromUtf8("mainIconLabel"));
 	mainIconLabel->setPixmap(mainIcon->pixmap(QSize(15, 14)));
 
-	menuBar = new QMenuBar();
-	menuBar->setObjectName(QString::fromUtf8("menuBar"));
-	menuBar->setSizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
-	QMenu* menu = menuBar->addMenu("文件(&F)");
-	menu->addActions({ new QAction("新建"),new QAction("保存") ,new QAction("打开"), menu->addSeparator() ,new QAction("退出") });
-	menu = menuBar->addMenu("工程(&P)");
-	menu->addActions({ new QAction("启动"),new QAction("停止") ,new QAction("编辑") });
-	menu = menuBar->addMenu("视图(&V)");
-	menu->addActions({ new QAction("工程"),new QAction("监控") ,new QAction("统计"),new QAction("日志") });
-	menu = menuBar->addMenu("帮助(&H)");
-	menu->addActions({ new QAction("关于") });
+
+
 
 
 	maxButton = new QPushButton(this);
@@ -46,7 +37,23 @@ void Ui_TitleBar::setup()
 	blankArea = new QWidget();
 	blankArea->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
 	horizontalLayout->addWidget(mainIconLabel);
-	horizontalLayout->addWidget(menuBar);
+
+	if (hasmenu)
+	{
+		menuBar = new QMenuBar();
+		menuBar->setObjectName(QString::fromUtf8("menuBar"));
+		menuBar->setSizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
+		QMenu* menu = menuBar->addMenu("文件(&F)");
+		menu->addActions({ new QAction("新建"),new QAction("保存") ,new QAction("打开"), menu->addSeparator() ,new QAction("退出") });
+		menu = menuBar->addMenu("工程(&P)");
+		menu->addActions({ new QAction("启动"),new QAction("停止") ,new QAction("编辑") });
+		menu = menuBar->addMenu("视图(&V)");
+		menu->addActions({ new QAction("工程"),new QAction("监控") ,new QAction("统计"),new QAction("日志") });
+		menu = menuBar->addMenu("帮助(&H)");
+		menu->addActions({ new QAction("关于") });
+		horizontalLayout->addWidget(menuBar);
+	}
+
 	horizontalLayout->addWidget(blankArea);
 	horizontalLayout->addWidget(maxButton);
 	horizontalLayout->addWidget(minButton);
