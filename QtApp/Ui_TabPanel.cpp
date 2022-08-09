@@ -26,8 +26,8 @@ void Ui_TabPanel::setup()
 	device->setMinimumSize(300, 200);
 	device->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
 	device->setObjectName(QString::fromUtf8("tabpage"));
-	addTab(summary, "综合");
-	addTab(circute, "回路");
-	addTab(device, "设备");
+	addTab(summary, QString::fromUtf8("综合"));
+	addTab(circute, QString::fromUtf8("回路"));
+	addTab(device, QString::fromUtf8("设备"));
 }
 

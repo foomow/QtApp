@@ -1,4 +1,5 @@
 ﻿#pragma once
+#pragma execution_character_set("utf-8")
 #ifndef UI_TITLEBAR_H
 #define UI_TITLEBAR_H
 #include <QLabel>

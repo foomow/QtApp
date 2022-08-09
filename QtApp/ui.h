@@ -1,4 +1,5 @@
-﻿#ifndef UI_QTAPP_H
+﻿#pragma execution_character_set("utf-8")
+#ifndef UI_QTAPP_H
 #define UI_QTAPP_H
 
 #include <QtCore/QVariant>
