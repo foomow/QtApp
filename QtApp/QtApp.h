@@ -5,8 +5,14 @@
 #include <QMouseEvent>
 #include <QPoint>
 #include <QMdiSubWindow>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolBar>
+#include <QtWidgets/QWidget>
+#include <QtWidgets/QMdiArea>
 #include "Ui_TitleBar.h"
 #include "Ui_TabPanel.h"
+
 
 class QtApp : public QMainWindow
 {

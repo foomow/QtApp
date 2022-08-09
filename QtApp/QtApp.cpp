@@ -1,5 +1,6 @@
 ﻿#include<iostream>
 #include "QtApp.h"
+#include "SubWin.h"
 
 QtApp::QtApp(QWidget* parent)
 	: QMainWindow(parent)
@@ -61,9 +62,9 @@ void QtApp::setupUi()
 	mainContent->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
 	mainContent->setBackground(QColor("#222c18"));
 
-	leftTab = new Ui_TabPanel;
+	SubWin* subwin = new SubWin();
 
-	mainContent->addSubWindow(leftTab,Qt::WindowType::FramelessWindowHint);
+	mainContent->addSubWindow(subwin);
 
 
 
