@@ -21,11 +21,8 @@ private:
     void mouseReleaseEvent(QMouseEvent* event);
 
 
-    int m_nMouseClick_X_Coordinate;
-    int m_nMouseClick_Y_Coordinate;
-
-    int m_nMouseClick_X_offset;
-    int m_nMouseClick_Y_offset;
+    QPoint oldpos_win;
+    QPoint oldpos_mouse;
 
 };
 
