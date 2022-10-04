@@ -24,6 +24,7 @@ set(PROJECT_SOURCES
         QtApp/Ui_TabPanel.h
         QtApp/Ui_TitleBar.cpp
         QtApp/Ui_TitleBar.h
+        QtApp/QtApp.qrc
 )
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 add_executable(QtApp ${PROJECT_SOURCES})
